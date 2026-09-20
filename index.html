@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alisops — Your operations ally</title>
+<meta name="description" content="Automated dashboards and data systems that replace manual work with clarity. Join the Alisops waitlist for early access.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1C2A22;
+    --paper: #D9D4C6;
+    --paper-text: #201D17;
+    --ink-text: #EDE8DA;
+    --clay: #A9677D;
+    --ochre: #BE8A3B;
+    --line: rgba(32, 29, 23, 0.16);
+    --line-dark: rgba(237, 232, 218, 0.18);
+    --max: 1080px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--paper-text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, .serif {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    line-height: 1.08;
+    margin: 0;
+  }
+
+  a { color: inherit; }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---- Nav ---- */
+  header.site-nav {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .site-nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    letter-spacing: 0.01em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+  }
+  .nav-links a { text-decoration: none; opacity: 0.8; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-links a:focus-visible, a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--clay);
+    outline-offset: 3px;
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    padding: 96px 0 88px;
+  }
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px;
+    align-items: end;
+  }
+  .hero h1 {
+    font-size: clamp(46px, 7vw, 84px);
+  }
+  .hero-side {
+    font-size: 16px;
+    padding-bottom: 8px;
+  }
+  .hero-side p {
+    opacity: 0.85;
+    margin: 0 0 22px;
+    max-width: 32ch;
+  }
+  .btn {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--ink-text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 13px 22px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .btn:hover { background: #0f1810; }
+
+  /* ---- Section base ---- */
+  section {
+    padding: 76px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--clay);
+    margin-bottom: 18px;
+  }
+
+  /* ---- About ---- */
+  .about .container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 56px;
+  }
+  .about h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    max-width: 12ch;
+  }
+  .about-body p {
+    max-width: 62ch;
+    font-size: 17px;
+    margin: 0 0 18px;
+  }
+  .pull {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--clay);
+    border-left: 2px solid var(--clay);
+    padding-left: 20px;
+    margin: 30px 0;
+    max-width: 46ch;
+  }
+
+  /* ---- Templates ---- */
+  .templates h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    margin-bottom: 12px;
+  }
+  .templates > .container > p {
+    max-width: 56ch;
+    opacity: 0.85;
+    margin: 0 0 44px;
+    font-size: 16px;
+  }
+  .template-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .template-card {
+    background: var(--paper);
+    padding: 30px 26px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .template-card:nth-child(2) { background: var(--ink); color: var(--ink-text); }
+  .template-card:nth-child(2) .tmpl-tag { color: var(--ochre); }
+  .template-card .tmpl-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  .template-card .tmpl-desc {
+    font-size: 14.5px;
+    opacity: 0.85;
+    max-width: 32ch;
+  }
+  .tmpl-tag {
+    font-size: 13px;
+    color: var(--clay);
+    margin-top: 20px;
+  }
+
+  /* ---- Waitlist ---- */
+  .waitlist {
+    background: var(--ink);
+    color: var(--ink-text);
+    border-bottom: none;
+  }
+  .waitlist .container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .waitlist h2 {
+    font-size: clamp(32px, 4.5vw, 50px);
+    max-width: 10ch;
+  }
+  .waitlist p {
+    opacity: 0.8;
+    max-width: 38ch;
+    margin-top: 16px;
+    font-size: 16px;
+  }
+  .form-frame {
+    border-top: 1px solid var(--line-dark);
+    border-bottom: 1px solid var(--line-dark);
+    padding: 4px 0;
+  }
+  .form-frame iframe {
+    width: 100%;
+    height: 420px;
+    border: none;
+    display: block;
+  }
+
+  /* ---- Footer ---- */
+  footer {
+    padding: 34px 0;
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 760px) {
+    .hero .container,
+    .about .container,
+    .waitlist .container {
+      grid-template-columns: 1fr;
+    }
+    .template-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    section { padding: 56px 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="container">
+    <div class="wordmark">Alisops</div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#templates">Templates</a>
+      <a href="#waitlist">Waitlist</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Your operations,<br>finally at ease.</h1>
+    <div class="hero-side">
+      <p>Automated dashboards and data systems that replace manual work with clarity — built on tools your business already trusts.</p>
+      <a href="#waitlist" class="btn">Join the waitlist</a>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div>
+      <div class="label">About</div>
+      <h2>Built for the operators doing it by hand.</h2>
+    </div>
+    <div class="about-body">
+      <p>Alisops exists for the business owner still copying numbers between spreadsheets at midnight — the operations manager who knows exactly what report they need but not how to automate it. We build the system once, so the manual work stops for good.</p>
+      <p class="pull">The goal isn't a prettier spreadsheet. It's one you never have to touch again.</p>
+      <p>Every tool we ship is designed to run quietly in the background — updating itself, flagging what matters, and staying out of your way until you need it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="templates" id="templates">
+  <div class="container">
+    <div class="label">Templates</div>
+    <h2>Ready-built systems, coming soon.</h2>
+    <p>A growing library of automated tools you can install into your own Google Workspace in minutes — no scripting required on your end.</p>
+    <div class="template-grid">
+      <div class="template-card">
+        <div>
+          <div class="tmpl-name">Ledger Flow</div>
+          <div class="tmpl-desc">Automated income &amp; expense tracking with monthly summaries that build themselves.</div>
+        </div>
+        <div class="tmpl-tag">In development</div>
+      </div>
+      <div class="template-card">
+        <div>
+          <div class="tmpl-name">Client Base</div>
+          <div class="tmpl-desc">A lightweight CRM that logs client activity and follow-ups without a single manual entry.</div>
+        </div>
+        <div class="tmpl-tag">In development</div>
+      </div>
+      <div class="template-card">
+        <div>
+          <div class="tmpl-name">Stock Watch</div>
+          <div class="tmpl-desc">Inventory tracking with low-stock alerts sent straight to your inbox.</div>
+        </div>
+        <div class="tmpl-tag">In development</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="waitlist" id="waitlist">
+  <div class="container">
+    <div>
+      <h2>Get in early.</h2>
+      <p>Join the waitlist and be first to install our tools when they launch — plus early-access pricing for the first cohort.</p>
+    </div>
+    <div class="form-frame">
+      <!-- Replace the src below with your deployed Apps Script web app /exec URL -->
+      <iframe src="https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec" title="Join the Alisops waitlist"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>Alisops</span>
+    <span>&copy; 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
