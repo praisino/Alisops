@@ -178,6 +178,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s ease;
+  }
+  a.template-card:hover {
+    background: #cfc9b8;
+  }
+  .template-card:nth-child(2):hover {
+    background: #0f1810;
   }
   .template-card:nth-child(2) { background: var(--ink); color: var(--ink-text); }
   .template-card:nth-child(2) .tmpl-tag { color: var(--ochre); }
@@ -309,13 +318,13 @@
         </div>
         <div class="tmpl-tag">In development</div>
       </div>
-      <div class="template-card">
+      <a class="template-card" href="https://docs.google.com/spreadsheets/d/1mHux57qsx-VBL97S8usukgiq9SsWHW1X_osuD6UdCcU/edit?usp=sharing" target="_blank" rel="noopener">
         <div>
-          <div class="tmpl-name">Client Base</div>
-          <div class="tmpl-desc">A lightweight CRM that logs client activity and follow-ups without a single manual entry.</div>
+          <div class="tmpl-name">Invoice Flow</div>
+          <div class="tmpl-desc">Branded invoices with a shareable order-form link — customers order, you get notified, everything logs itself.</div>
         </div>
-        <div class="tmpl-tag">In development</div>
-      </div>
+        <div class="tmpl-tag">Get the template &rarr;</div>
+      </a>
       <div class="template-card">
         <div>
           <div class="tmpl-name">Stock Watch</div>
@@ -335,7 +344,7 @@
     </div>
     <div class="form-frame">
       <!-- Replace the src below with your deployed Apps Script web app /exec URL -->
-      <iframe src="https://script.google.com/macros/s/AKfycby_R7OT7clQMLpOW579pgTBBXsEC1phkpwm_XuhIK3y1nf_GQJnlHaR4tcTynBHszRwVg/exec" title="Join the Alisops waitlist"></iframe>
+      <iframe src="https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec" title="Join the Alisops waitlist"></iframe>
     </div>
   </div>
 </section>
