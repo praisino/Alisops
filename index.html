@@ -153,6 +153,102 @@
     max-width: 46ch;
   }
 
+  /* ---- Services ---- */
+  .services h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    max-width: 16ch;
+    margin-bottom: 12px;
+  }
+  .services > .container > p {
+    max-width: 56ch;
+    opacity: 0.85;
+    margin: 0 0 40px;
+    font-size: 16px;
+  }
+  .service-row {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 24px;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+  }
+  .service-row:last-child { border-bottom: 1px solid var(--line); }
+  .service-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    color: var(--clay);
+  }
+  .service-row h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .service-row p {
+    font-size: 14.5px;
+    opacity: 0.8;
+    margin: 0;
+    max-width: 58ch;
+  }
+  .service-tag {
+    display: block;
+    font-size: 12.5px;
+    color: var(--clay);
+    margin-top: 8px;
+  }
+
+  /* ---- Behind It (credibility) ---- */
+  .behind-it {
+    background: var(--ink);
+    color: var(--ink-text);
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .behind-it .container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 56px;
+  }
+  .behind-it h2 {
+    font-size: clamp(28px, 3.6vw, 38px);
+    max-width: 14ch;
+  }
+  .behind-it-body p {
+    font-size: 16px;
+    opacity: 0.85;
+    max-width: 58ch;
+    margin: 0 0 26px;
+  }
+  .credentials {
+    list-style: none;
+    margin: 0 0 26px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .credentials li {
+    font-size: 14px;
+    padding-left: 18px;
+    position: relative;
+    opacity: 0.9;
+  }
+  .credentials li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--ochre);
+  }
+  .behind-links {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+  }
+  .behind-links a {
+    text-decoration: underline;
+    text-decoration-color: var(--line-dark);
+    text-underline-offset: 3px;
+  }
+  .behind-links a:hover { text-decoration-color: var(--ochre); }
+
   /* ---- Templates ---- */
   .templates h2 {
     font-size: clamp(30px, 4vw, 42px);
@@ -255,10 +351,12 @@
   @media (max-width: 760px) {
     .hero .container,
     .about .container,
+    .behind-it .container,
     .waitlist .container {
       grid-template-columns: 1fr;
     }
     .template-grid { grid-template-columns: 1fr; }
+    .service-row { grid-template-columns: 40px 1fr; gap: 16px; }
     .nav-links { display: none; }
     section { padding: 56px 0; }
   }
@@ -275,6 +373,8 @@
     <div class="wordmark">Alisops</div>
     <nav class="nav-links">
       <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#behind-it">Behind It</a>
       <a href="#templates">Templates</a>
       <a href="#waitlist">Waitlist</a>
     </nav>
@@ -295,12 +395,78 @@
   <div class="container">
     <div>
       <div class="label">About</div>
-      <h2>Built for the operators doing it by hand.</h2>
+      <h2>Built for teams who outgrew the spreadsheet they started with.</h2>
     </div>
     <div class="about-body">
-      <p>Alisops exists for the business owner still copying numbers between spreadsheets at midnight — the operations manager who knows exactly what report they need but not how to automate it. We build the system once, so the manual work stops for good.</p>
-      <p class="pull">The goal isn't a prettier spreadsheet. It's one you never have to touch again.</p>
+      <p>Alisops exists for anyone still stitching reports together by hand — a founder juggling five tabs, or a department running critical processes through tools that were never built to scale. We build the system once, so the manual work stops for good, whether that's one spreadsheet or a dozen workflows across a growing team.</p>
+      <p class="pull">The goal isn't a prettier spreadsheet. It's a system you never have to babysit.</p>
       <p>Every tool we ship is designed to run quietly in the background — updating itself, flagging what matters, and staying out of your way until you need it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="label">Services</div>
+    <h2>From a single tool to the systems behind a whole operation.</h2>
+    <p>We work across five tiers, depending on how deep the need goes — from a free template you install yourself, to ongoing systems support for growing teams.</p>
+
+    <div class="service-row">
+      <div class="service-num">01</div>
+      <div>
+        <h3>Templates</h3>
+        <p>Ready-made tools — install and go, no custom work needed.</p>
+      </div>
+    </div>
+    <div class="service-row">
+      <div class="service-num">02</div>
+      <div>
+        <h3>Custom Automation</h3>
+        <p>Dashboards and trackers built around how your business actually runs, not a generic template.</p>
+      </div>
+    </div>
+    <div class="service-row">
+      <div class="service-num">03</div>
+      <div>
+        <h3>Systems Audit &amp; Redesign</h3>
+        <p>For tools that have outgrown their original design. We find the bottlenecks and rebuild for scale.</p>
+      </div>
+    </div>
+    <div class="service-row">
+      <div class="service-num">04</div>
+      <div>
+        <h3>Enterprise Data Operations</h3>
+        <p>Cross-department pipelines, standardized reporting layers, and process documentation for larger teams.</p>
+      </div>
+    </div>
+    <div class="service-row">
+      <div class="service-num">05</div>
+      <div>
+        <h3>Fractional Ops Support</h3>
+        <p>Ongoing, retainer-based support — we maintain and evolve your systems as your business changes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="behind-it" id="behind-it">
+  <div class="container">
+    <div>
+      <div class="label">Behind it</div>
+      <h2>Built on real operational experience.</h2>
+    </div>
+    <div class="behind-it-body">
+      <p>Alisops is built by Praise Taiwo, a BI Data Analyst &amp; Analytics Engineer with 6+ years designing data warehouses, pipelines, and internal tooling across GCP and AWS — work that spans early-stage automation to systems built for large, distributed operations teams.</p>
+      <ul class="credentials">
+        <li>AWS Certified Data Engineer — Associate</li>
+        <li>AWS Certified Solutions Architect — Associate</li>
+        <li>Kubernetes and Cloud Native Associate (KCNA)</li>
+        <li>MSc Financial Engineering — in progress</li>
+      </ul>
+      <div class="behind-links">
+        <a href="https://www.linkedin.com/in/praise-taiwo/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/praisino" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </div>
   </div>
 </section>
@@ -343,7 +509,6 @@
       <p>Join the waitlist and be first to install our tools when they launch — plus early-access pricing for the first cohort.</p>
     </div>
     <div class="form-frame">
-      <!-- Replace the src below with your deployed Apps Script web app /exec URL -->
       <iframe src="https://script.google.com/macros/s/AKfycby_R7OT7clQMLpOW579pgTBBXsEC1phkpwm_XuhIK3y1nf_GQJnlHaR4tcTynBHszRwVg/exec" title="Join the Alisops waitlist"></iframe>
     </div>
   </div>
