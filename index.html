@@ -533,19 +533,71 @@
     color: var(--muted-dark);
     margin-top: 16px;
   }
-  .compliance .frameworks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 22px;
-    padding: 0;
-    list-style: none;
-  }
-  .compliance .frameworks li {
+  .compliance .regions {
     font-family: var(--mono);
-    font-size: 11.5px;
-    border: 1px solid var(--line-dark);
-    padding: 5px 9px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--ink-text);
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line-dark);
+  }
+
+  .regs { margin-top: 72px; }
+  .regs-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .regs-head h3 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3vw, 38px);
+    line-height: 1.1;
+  }
+  .regs-head p { font-size: 15px; color: var(--muted); max-width: 52ch; }
+  .reg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line-strong);
+    border: 1px solid var(--line-strong);
+  }
+  .reg {
+    background: var(--paper-light);
+    padding: 24px 24px 26px;
+  }
+  .reg h4 {
+    margin: 0 0 14px;
+    font-family: var(--mono);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--clay-text);
+  }
+  .reg ul { list-style: none; margin: 0; padding: 0; }
+  .reg li {
+    padding: 9px 0;
+    border-top: 1px solid var(--line);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+  .reg li small {
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .regs-note {
+    margin-top: 18px;
+    font-size: 13.5px;
+    color: var(--muted);
+    max-width: 90ch;
   }
 
   /* ---------- Templates ---------- */
@@ -896,6 +948,7 @@
     .industries .other { grid-column: 1; margin-top: 0; }
     .security-head, .sec-bottom { grid-template-columns: 1fr; gap: 32px; }
     .sec-steps { grid-template-columns: 1fr 1fr; }
+    .reg-grid { grid-template-columns: 1fr 1fr; }
     .sec-step:nth-child(3) { padding-left: 0; border-left: none; }
     .sec-step:nth-child(n+3) { border-top: 1px solid var(--line); }
     .split, .people-grid, .promise, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -921,6 +974,8 @@
     .sec-step + .sec-step { border-top: 1px solid var(--line); }
     .controls { grid-template-columns: 1fr; }
     .compliance { padding: 28px 22px; }
+    .reg-grid { grid-template-columns: 1fr; }
+    .reg { padding: 22px 20px; }
     .ledger-cols { display: none; }
     .ledger-row { grid-template-columns: 1fr; }
     .ledger-row .before { padding-bottom: 4px; }
@@ -1293,10 +1348,70 @@
         <div class="label">Compliance</div>
         <p class="big">We document how your systems handle personal data, so you can show it when asked.</p>
         <p class="small">We map your data flows against the rules that apply to you and close the gaps. Where you need a legal opinion, we work alongside your legal adviser.</p>
-        <ul class="frameworks">
-          <li>GDPR</li><li>Nigeria Data Protection Act</li><li>Your industry's rules</li>
-        </ul>
+        <p class="regions">Europe · UK · US · Canada · Asia · Australia · New Zealand · Africa</p>
       </aside>
+    </div>
+
+    <div class="regs">
+      <div class="regs-head">
+        <h3>Rules we design around</h3>
+        <p>Wherever your customers and staff are, we map your data against the laws that apply there and build the controls in from the start.</p>
+      </div>
+      <div class="reg-grid">
+        <div class="reg">
+          <h4>Europe &amp; UK</h4>
+          <ul>
+            <li>GDPR<small>European Union &amp; EEA</small></li>
+            <li>UK GDPR &amp; Data Protection Act 2018<small>United Kingdom</small></li>
+            <li>FADP<small>Switzerland</small></li>
+          </ul>
+        </div>
+        <div class="reg">
+          <h4>United States &amp; Canada</h4>
+          <ul>
+            <li>CCPA / CPRA<small>California, plus other state privacy laws</small></li>
+            <li>HIPAA<small>US health information</small></li>
+            <li>GLBA<small>US financial services</small></li>
+            <li>PIPEDA<small>Canada</small></li>
+          </ul>
+        </div>
+        <div class="reg">
+          <h4>Asia</h4>
+          <ul>
+            <li>PDPA<small>Singapore</small></li>
+            <li>DPDP Act 2023<small>India</small></li>
+            <li>PIPL<small>China</small></li>
+            <li>APPI<small>Japan</small></li>
+            <li>PDPO<small>Hong Kong</small></li>
+            <li>Data Privacy Act 2012<small>Philippines</small></li>
+          </ul>
+        </div>
+        <div class="reg">
+          <h4>Australia &amp; New Zealand</h4>
+          <ul>
+            <li>Privacy Act 1988 &amp; Australian Privacy Principles<small>Australia</small></li>
+            <li>Notifiable Data Breaches scheme<small>Australia</small></li>
+            <li>Privacy Act 2020<small>New Zealand</small></li>
+          </ul>
+        </div>
+        <div class="reg">
+          <h4>Africa</h4>
+          <ul>
+            <li>Nigeria Data Protection Act 2023<small>Nigeria</small></li>
+            <li>POPIA<small>South Africa</small></li>
+            <li>Data Protection Act 2019<small>Kenya</small></li>
+          </ul>
+        </div>
+        <div class="reg">
+          <h4>Security standards</h4>
+          <ul>
+            <li>ISO/IEC 27001<small>Information security management</small></li>
+            <li>SOC 2<small>Service organisation controls</small></li>
+            <li>PCI DSS<small>Card payment data</small></li>
+          </ul>
+        </div>
+      </div>
+      <p class="regs-note">Alisops doesn't certify organisations or give legal advice. We design systems and records that support your compliance and help you prepare evidence for your auditors, regulators and legal advisers.</p>
     </div>
   </div>
 </section>

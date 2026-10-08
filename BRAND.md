@@ -152,9 +152,22 @@ Every system is built with:
 
 ### Compliance wording
 
-- Say we **help clients align with** GDPR and the Nigeria Data Protection Act (NDPA) 2023, and **document** how their data is handled.
-- Never claim Alisops is "certified", "GDPR compliant" or "ISO/SOC 2 compliant". Those are formal attestations we don't hold.
-- We don't give legal advice. Where a legal opinion is needed, "we work alongside your legal adviser".
+The site lists the main data protection laws and security standards by region under "Rules we design around":
+
+| Region | Frameworks |
+|---|---|
+| Europe & UK | GDPR (EU & EEA), UK GDPR & Data Protection Act 2018, FADP (Switzerland) |
+| United States & Canada | CCPA / CPRA (California + other state laws), HIPAA (health), GLBA (financial services), PIPEDA (Canada) |
+| Asia | PDPA (Singapore), DPDP Act 2023 (India), PIPL (China), APPI (Japan), PDPO (Hong Kong), Data Privacy Act 2012 (Philippines) |
+| Australia & New Zealand | Privacy Act 1988 & Australian Privacy Principles, Notifiable Data Breaches scheme, Privacy Act 2020 (NZ) |
+| Africa | Nigeria Data Protection Act 2023, POPIA (South Africa), Data Protection Act 2019 (Kenya) |
+| Security standards | ISO/IEC 27001, SOC 2, PCI DSS |
+
+Wording rules:
+- Say we **design systems that support** a client's compliance, **map their data** against the laws that apply, and **help prepare evidence** for auditors, regulators and legal advisers.
+- Never claim Alisops is "certified", "GDPR compliant", "HIPAA compliant" or "ISO/SOC 2 compliant". Those are formal attestations we don't hold.
+- We don't give legal advice. Where a legal opinion is needed, we work alongside the client's legal adviser.
+- Review this list once a year, because privacy laws change often (US state laws especially).
 
 ## Presenting the founder
 
